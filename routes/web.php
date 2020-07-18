@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/compra', 'CompraController@index');
+Route::get('/compra/fecha', 'CompraController@comprasxfechas');
+Route::get('/compra/detalle', 'CompraController@compra_detalle');

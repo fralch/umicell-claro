@@ -1,9 +1,10 @@
 $(document).ready(function(){
     
+    
     $("#compra_desde").change(function(event){
         console.log("funciono");
         // var nom =$("#compra_desde").val() ;
-        
+            
        
         var desde = new Date($('#compra_desde').val());
         desde = desde.toISOString();        
@@ -40,14 +41,19 @@ $(document).ready(function(){
                     subtotal=parseFloat(subtotal)+parseFloat(val.subtotal);
                     igv=parseFloat(igv)+parseFloat(val.igv);
                     total=parseFloat(total)+parseFloat(val.total); 
+
+                    $("#subtotal_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(subtotal).toFixed(2)+'">');
+                    $("#igv_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(igv).toFixed(2)+'">');
+                    $("#total_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(total).toFixed(2)+'">');
                 });
                 console.log(subtotal);
                 console.log(igv);
                 console.log(total);
-                $("#sumatoria").html("SubTotal: "+parseFloat(subtotal).toFixed(2)+' '+"IGV: "+parseFloat(igv).toFixed(2)+" "+"Total: "+parseFloat(total).toFixed(2));
+                // $("#sumatoria").html("SubTotal: "+parseFloat(subtotal).toFixed(2)+' '+"IGV: "+parseFloat(igv).toFixed(2)+" "+"Total: "+parseFloat(total).toFixed(2));
+               
             },
             error : function(xhr, status) {
-                console.log('problema buscando');
+                console.log('problema buscando'+desde + hasta);
             },
             complete : function(xhr, status) {
                 // alert('Petición realizada');
@@ -99,6 +105,9 @@ $(document).ready(function(){
                     subtotal=parseFloat(subtotal)+parseFloat(val.subtotal);
                     igv=parseFloat(igv)+parseFloat(val.igv);
                     total=parseFloat(total)+parseFloat(val.total); 
+                    $("#subtotal_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(subtotal).toFixed(2)+'">');
+                    $("#igv_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(igv).toFixed(2)+'">');
+                    $("#total_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(total).toFixed(2)+'">');
                     
                 });
                 console.log(subtotal);

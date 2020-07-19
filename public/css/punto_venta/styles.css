@@ -139,7 +139,7 @@ ul.top-menu > li > .logout {
 
 #sidebar h5 {
 	color: #f2f2f2;
-	font-weight: 700;
+	font-weight: 700px;
 }
 
 #sidebar ul li {
@@ -311,7 +311,7 @@ ul.sidebar-menu li a.active i {
     padding-bottom: 15px;
     padding-top: 0px;
     width: 100%;
-    height: 800px;
+    height: 850px;
 }
 
 a.logo {
@@ -727,6 +727,8 @@ padding: 5px;}
 
   div.row.form-group{
       display: flex;
+      align-items: center; 
+      justify-content: center;
       width: 100%;
   }
 
@@ -734,17 +736,34 @@ padding: 5px;}
       padding: 5px;
   }
 
+  #contenedor_tabla{
+      text-align: centes;
+  }
+
+  #tabla{
+    background-color: white;
+    }
+
+    th{
+        background-color: gray;
+        color:white;
+        text-align: center;
+    }
+
+    td{
+        text-align: center;
+    }
+
+
+
+
 /*REGISTRO COMPRAS___________________________________________*/
 
 .input-group {
-    width: 20%;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: auto;
   }
 
-#dtpFechaDesde,#dtpFechaHasta{
-    width: 20%;
-}
+
 
 #gr_subtotal, #gr_igv,#gr_total{
     margin-left: 5%;

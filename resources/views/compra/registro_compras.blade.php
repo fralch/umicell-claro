@@ -47,9 +47,10 @@
                 </div>
             </form>        
         </div>
-        <div class="card-title">RESULTADOS</div>
-          <!-- (AJAX) -->
-          <div id='tabla'></div>
+        <div class="card-title">RESULTADOS</div> 
+          <div class="card-body card-block"> 
+                <div id='tabla' style="text-align:center"></div>
+          </div>
         <div class="card-title">TOTALES</div>
         <div class="card-body card-block"> 
             <form class="form-inline" role="form">

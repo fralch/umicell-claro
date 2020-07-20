@@ -27,6 +27,7 @@
             <th>Costo</th>
             <th>IGV</th>
             <th>Consto+IGV</th>
+            <th>Acciones</th>
         </tr>
         @foreach($detalles_compras as  $value)
             <tr>
@@ -37,6 +38,7 @@
                 <td> {{$value->costo}}</td>
                 <td> {{$value->igv}}</td>
                 <td> {{$value->costo_con_igv}}</td>
+                <td> <a href="/compra/detalle/producto/{{$value->id}}">Borrar</a>/ <a href="#">Editar</a></td>
             </tr>
 
         @endforeach

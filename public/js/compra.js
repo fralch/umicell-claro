@@ -35,7 +35,7 @@ $(document).ready(function(){
             let subtotal=0;
             let igv=0;
             let total=0;
-            $("#tabla").html("<table class='table table-striped table-bordered table-responsive' id='tabla_compras' ><tr><th>FECHA DE COMPRA</th><th>TIPO</th><th>FACTURA SERIE</th><th>FACTURA NÚMERO</th><th>SUBTOTAL</th><th>IGV</th><th>TOTAL</th><th>DETALLES</th></tr>");
+            $("#tabla").html("<table class='table table-striped table-bordered table-responsive' id='tabla_compras' ><tr><th>FECHA DE COMPRA</th><th>TIPO</th><th>FACTURA SERIE</th><th>FACTURA NÚMERO</th><th>SUBTOTAL</th><th>IGV</th><th>TOTAL</th><th>EDITAR</th></tr>");
             $.each(response, function(i, val) {
                 $("#tabla_compras tbody ").append("<tr>");
                 $("#tabla_compras tbody ").append("<td>"+val.f_compra+"</td>");
@@ -45,7 +45,7 @@ $(document).ready(function(){
                 $("#tabla_compras tbody ").append("<td>"+val.subtotal+"</td>");
                 $("#tabla_compras tbody ").append("<td>"+val.igv+"</td>");
                 $("#tabla_compras tbody ").append("<td>"+val.total+"</td>");
-                $("#tabla_compras tbody ").append("<td><a href='/compra/detalle/"+val.id+"'>"+"Ver detalle"+"</a></td>")
+                $("#tabla_compras tbody ").append("<td><a href='/compra/detalle/"+val.id+"'>"+"Editar"+"</a></td>")
                 $("#tabla_compras tbody ").append("</tr></table>");
                 
                 subtotal=parseFloat(subtotal)+parseFloat(val.subtotal);

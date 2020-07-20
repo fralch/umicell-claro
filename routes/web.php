@@ -22,4 +22,5 @@ Route::get('/', function () {
 Route::get('/compra', 'CompraController@index');
 Route::get('/compra/fecha', 'CompraController@comprasxfechas');
 Route::get('/compra/detalle/{id}', 'CompraController@compra_detalle');
+Route::get('/compra/detalle/producto/{id}', 'CompraController@eliminar_producto_compra');
 Route::get('/registro_compras', function(){ return view('compra.registro_compras');});

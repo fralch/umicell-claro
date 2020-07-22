@@ -37,6 +37,24 @@ class CompraController extends Controller
 
         return view('compra.compra_detalle')->with('compras', $compras)->with('detalles_compras', $detalles_compras);
     }
+
+    public function editar_producto_compra($id)
+    {
+        # Eduta el producto de una compra ya realizada  
+        $editar_producto=Compra_detalle::select('compra_detalles.id','productos.cod_producto', 'compra_detalles.iccid', 'compra_detalles.imei','productos.descripcion','compra_detalles.costo','compra_detalles.igv', 'compra_detalles.costo_con_igv')
+                                    ->join('compras', 'compras.id', 'compra_detalles.id_compras')
+                                    ->join('productos', 'productos.id','compra_detalles.id_productos' )
+                                    ->where('compra_detalles.id', $id)
+                                    ->get();
+        return view('compra.editar_compra')->with('editar_producto', $editar_producto);
+    }
+
+    public function editar_producto_compra_guardar(Request $request)
+    {
+        // return $request;
+        Compra_detalle::where('id',$request->id)->update(['costo'=>$request->costo, 'igv'=>$request->igv, 'costo_con_igv'=>$request->costo_con_igv]);
+        return redirect()->back();
+    }
     
     public function eliminar_producto_compra($id)
     {
@@ -47,9 +65,6 @@ class CompraController extends Controller
 
     }
 
-    public function editar_producto_compra($id)
-    {
-        # Editar producto de compra hecha
-    }
+   
 
 }

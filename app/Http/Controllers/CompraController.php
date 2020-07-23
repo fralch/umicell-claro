@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Compra;
 use App\Compra_detalle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CompraController extends Controller
 {
@@ -71,21 +72,18 @@ class CompraController extends Controller
     public function guardar_suma_productos($id)
     {
         # code...
-        return $id;
-        /* 
-        SELECT
-            SUM(compra_detalles.costo),
-            SUM(compra_detalles.igv),
-            SUM(compra_detalles.costo_con_igv),
-            compras.subtotal, 
-            compras.igv,
-            compras.total
-        FROM
-            compra_detalles
-        INNER JOIN compras ON compras.id = compra_detalles.id_compras
-        WHERE
-            compras.id = 2434
-        */
+        $grabar_total= Compra_detalle::select(DB::raw('SUM(compra_detalles.costo) as subtotal'), DB::raw('SUM(compra_detalles.igv) as igv'),DB::raw('SUM(compra_detalles.costo_con_igv) as total') )
+                        ->join('compras','compras.id','compra_detalles.id_compras')
+                        ->where('compras.id', $id)
+                        ->get();
+
+        $subtotal=$grabar_total['0']->subtotal;
+        $igv=$grabar_total['0']->igv;
+        $total=$grabar_total['0']->total;
+
+        //echo $subtotal." ".$igv." ".$total;
+        Compra::where('id',$id )->update(['subtotal' => $subtotal, 'igv' => $igv, 'total' => $total], ['timestamps' => false]);
+        return redirect()->route('compra_detalle', ['id' => $id]);
     }
    
 

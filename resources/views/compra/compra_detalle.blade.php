@@ -1,51 +1,6 @@
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    @foreach ($compras as $item)
-        <h1>Detalles Compra</h1>
-        tipo de documento <input type="text" value='{{$item->tipo_doc}}'>
-        fecha   <input type="date" name="" id="" value="{{$item->f_compra}}">
-        <br>
-        Guia Serie: <input type="text" name="" id="" value='{{$item->guia_serie}}'>
-        Guia Numero <input type="text" name="" id="" value='{{$item->guia_numero}}'>
-        Factura Serie: <input type="text" name="" id="" value='{{$item->factura_serie}}'>
-        Factura Numero <input type="text" name="" id="" value='{{$item->factura_numero}}'>
-    @endforeach  
-
-    <table>
-        <tr>
-            <th>Codigo</th>
-            <th>ICCID</th>
-            <th>IMEI</th>
-            <th>Producto</th>
-            <th>Costo</th>
-            <th>IGV</th>
-            <th>Consto+IGV</th>
-            <th>Acciones</th>
-        </tr>
-        @foreach($detalles_compras as  $value)
-            <tr>
-                <td> {{$value->cod_producto}}</td>
-                <td> {{$value->iccid}}</td>
-                <td> {{$value->imei}}</td>
-                <td> {{$value->descripcion}}</td>
-                <td> {{$value->costo}}</td>
-                <td> {{$value->igv}}</td>
-                <td> {{$value->costo_con_igv}}</td>
-                <td> <a href="/compra/detalle/producto/{{$value->id}}">Borrar</a>/ <a href="#">Editar</a></td>
-            </tr>
-
-        @endforeach
-    </table>
-</body>
-</html> -->
-
+@php
+    $compra_id='';    
+@endphp
 
 <!doctype html>
 <html lang="en">
@@ -77,9 +32,11 @@
         </div>
         <div class="card-title">DETALLES DE COMPRA</div>
         <div class="card-body card-block">
+
         @foreach ($compras as $item)
-           
-        
+            @php
+                $compra_id=$item->id;
+            @endphp
             <div class="row form-group">
             <label for="text-input" class="form-control-label">Tipo de Documento</label>
             <input type="text" class="form-control" id="txtTipoDocumentoMC" value='{{$item->tipo_doc}}'>
@@ -149,8 +106,8 @@
             <!-- FIN AJAX -->
             <div class="col form-group">
                 <button type="button" class="btn btn-primary" id="btnAgregarMC">Agregar</button>
-                
-                <button type="button" class="btn btn-primary" id="btnGrabarMC">Grabar</button>
+                <!-- <button type="button" class="btn btn-primary" id="btnGrabarMC">Grabar</button> -->
+                <a href="/compra/guardar_suma_producto/{{$compra_id}}" class="btn btn-primary" id="btnGrabarMC">Grabar</a>
             </div>
 
         </div>   

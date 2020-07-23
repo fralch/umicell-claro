@@ -11,6 +11,7 @@
         @foreach ( $editar_producto as $valor )
             <input type="hidden" name="id" value='{{$valor->id}}'>
             Codigo <input type="text" value='{{$valor->cod_producto}}'><br>
+            <input type="hidden" name="compra_id" value='{{$valor->compra_id}}'>
             Producto <input type="text" value='{{$valor->descripcion}}'><br>
             Costo <input type="text" name="costo" id="" value='{{$valor->costo}}'><br>
             IGV <input type="text" name='igv' value='{{$valor->igv}}'><br>

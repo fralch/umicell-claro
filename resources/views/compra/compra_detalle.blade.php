@@ -105,8 +105,9 @@
             </table>
             <!-- FIN AJAX -->
             <div class="col form-group">
-                <button type="button" class="btn btn-primary" id="btnAgregarMC">Agregar</button>
+                {{-- <button type="button" class="btn btn-primary" id="btnAgregarMC">Agregar</button> --}}
                 <!-- <button type="button" class="btn btn-primary" id="btnGrabarMC">Grabar</button> -->
+                <a href="/compra/listar_producto" class="btn btn-primary" id="btnAgregarMC">Agregar</a>
                 <a href="/compra/guardar_suma_producto/{{$compra_id}}" class="btn btn-primary" id="btnGrabarMC">Grabar</a>
             </div>
 

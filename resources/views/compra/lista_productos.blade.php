@@ -15,7 +15,7 @@
     <!-- Custom styles for this template-->
     <link href="css/fonts.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/punto_venta/styles.css" rel="stylesheet">
+    <link href="css/punto_venta/styles_lista_producto.css" rel="stylesheet">
 
     <title>Lista de compras</title>
   </head>
@@ -24,32 +24,28 @@
 
     <div class="card"></div>
         <div class="card-header">
-            <strong>LISTA DE COMPRAS</strong>
+            <strong>LISTA DE PRODUCTOS</strong>
         </div>
         <div class="card-title">PARÁMETROS DE BÚSQUEDA</div>
         <div class="card-body card-block"> 
             <form class="form-inline">
-                <div class="form-group">
                     <label for="text-input" class="form-control-label">Identificación</label>
-                    <select class="form-control" id="cmbIdentificacion">
+                    <select class="form-control" id="cmbIdentificacionLP">
                         <option></option>
                     </select>
-                </div>
-                <div class="form-group">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="rdbCodigoProducto" value="option1" checked>
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="rdbCodigoProductoLP" value="option1" checked>
                         <label class="form-check-label" for="rdbCodigoProducto">
                           Código Producto
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="rdbDescripcion" value="option2">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="rdbDescripcionLP" value="option2">
                         <label class="form-check-label" for="rdbDescripcion">
                           Descripción
                         </label>
                       </div> 
-                      <input type="text" class="form-control" id="txtDescripcion">
-                </div>
+                      <input type="text" class="form-control" id="txtDescripcionLP">
             </form>  
         </div>
         <div class="card-title">LISTA DE RESULTADOS</div>
@@ -58,34 +54,28 @@
         </div>
         <div class="card-title">DETALLES DE LA COMPRA</div>
         <div class="card-body card-block">
-            <form>
+            <form class="form-inline">
                 <div class="col form-group">
                     <label for="text-input" class="form-control-label">Costo S/</label>
-                    <input type="text" class="form-control" id="txtCosto">
-                </div>
-                <div class="col form-group">
+                    <input type="text" class="form-control" id="txtCostoLP">
                     <label for="text-input" class="form-control-label">Cantidad</label>
-                    <input type="text" class="form-control" id="txtCantidad">
-                </div>
-                <div class="col form-group">
-                    <label for="text-input" class="form-control-label">IMEI</label>
-                    <input type="text" class="form-control" id="txtIMEI">
-                </div>
-                <div class="col form-group">
-                    <label for="text-input" class="form-control-label">ICCID</label>
-                    <input type="text" class="form-control" id="txtICCID">
-                </div>
-                <div class="col form-group">
-                    <label for="text-input" class="form-control-label">ICCID2</label>
-                    <input type="text" class="form-control" id="txtICCID2">
-                </div>
-                <div class="col form-group">
-                    <button type="button" class="btn btn-primary" id="btnNuevo">Agregar</button>
+                    <input type="text" class="form-control" id="txtCantidadLP">
                 </div>
             </form>
-        </div>
-
-       
+            <form class="form-inline">
+                <div class="col form-group">
+                    <label for="text-input" class="form-control-label">IMEI</label>
+                    <input type="text" class="form-control" id="txtIMEILP">
+                    <label for="text-input" class="form-control-label">ICCID</label>
+                    <input type="text" class="form-control" id="txtICCIDLP">
+                    <label for="text-input" class="form-control-label">ICCID2</label>
+                    <input type="text" class="form-control" id="txtICCID2LP">
+                </div>
+            </form> 
+            <div class="col form-group">
+                <button type="button" class="btn btn-primary" id="btnAgregarLP">Agregar</button>
+            </div>
+        </div>  
     </div> 
       
 
@@ -94,9 +84,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script class="include" type="text/javascript" src="../../js/jquery.dcjqaccordion.2.7.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="js/jquery.scrollTo.min.js"></script>
     <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="js/punto_venta/scripts.js"></script>

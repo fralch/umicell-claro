@@ -27,4 +27,5 @@ Route::get('/compra/detalles/editar_producto_guardar', 'CompraController@editar_
 Route::get('/compra/detalle/producto/{id}', 'CompraController@eliminar_producto_compra');
 Route::get('/registro_compras', function(){ return view('compra.registro_compras');});
 Route::get('/compra/guardar_suma_producto/{id}', 'CompraController@guardar_suma_productos');
+Route::get('/compra/listar_producto', 'ProductoController@index');
 

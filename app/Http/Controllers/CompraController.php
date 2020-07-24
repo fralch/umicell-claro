@@ -28,6 +28,7 @@ class CompraController extends Controller
     public function compra_detalle($id)
     {
         //return $id;
+        
         $compras=Compra::where('id', $id)->get();
 
         $detalles_compras=Compra_detalle::select('compra_detalles.id','productos.cod_producto', 'compra_detalles.iccid', 'compra_detalles.imei','productos.descripcion','compra_detalles.costo','compra_detalles.igv', 'compra_detalles.costo_con_igv')
@@ -36,6 +37,7 @@ class CompraController extends Controller
                                     ->where('compras.id', $id)
                                     ->get();
 
+        session(['compra_id' => $id]);
         return view('compra.compra_detalle')->with('compras', $compras)->with('detalles_compras', $detalles_compras);
     }
 
@@ -53,6 +55,7 @@ class CompraController extends Controller
     public function editar_producto_compra_guardar(Request $request)
     {
         $id_c=$request->compra_id;
+        
         // return $request;
         Compra_detalle::where('id',$request->id)->update(['costo'=>$request->costo, 'igv'=>$request->igv, 'costo_con_igv'=>$request->costo_con_igv]);
         
@@ -71,6 +74,7 @@ class CompraController extends Controller
 
     public function guardar_suma_productos($id)
     {
+        
         # code...
         $grabar_total= Compra_detalle::select(DB::raw('SUM(compra_detalles.costo) as subtotal'), DB::raw('SUM(compra_detalles.igv) as igv'),DB::raw('SUM(compra_detalles.costo_con_igv) as total') )
                         ->join('compras','compras.id','compra_detalles.id_compras')
@@ -83,6 +87,8 @@ class CompraController extends Controller
 
         //echo $subtotal." ".$igv." ".$total;
         Compra::where('id',$id )->update(['subtotal' => $subtotal, 'igv' => $igv, 'total' => $total], ['timestamps' => false]);
+
+        
         return redirect()->route('compra_detalle', ['id' => $id]);
     }
    

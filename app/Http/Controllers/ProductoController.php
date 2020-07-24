@@ -26,7 +26,9 @@ class ProductoController extends Controller
 
     public function guardar_lista_productos(Request $request)
     {
+        session()->forget('compra_id');
         return $request;
+        
     }
    
 }

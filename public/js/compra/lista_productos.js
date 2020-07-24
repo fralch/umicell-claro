@@ -1,10 +1,13 @@
 $(document).ready(function(){
-    $("#txtDescripcionLP").keyup(function(event){
+
+    // $("#txtDescripcionLP").keyup(function(event){
+    $( "#Buscar_producto" ).click(function() {    
+  
        // console.log("funciono?");
        
         var x =$("#txtDescripcionLP").val() ;
         // console.log(x);
-
+        $("#tabla").html("<table id='t_producto' ><tr><th>Codigo Producto</th><th>Descripcion</th><th>Tipo</th></tr>");
         $.ajax({
             url : '/compra/listar_producto/busqueda',
             data : { nombre : x  },
@@ -22,7 +25,7 @@ $(document).ready(function(){
                     $("#t_producto tbody ").append("</tr></table>");
                     x=x++;
                 });
-               //console.log(response);
+               console.log(response);
 
             },
             error : function(xhr, status) {
@@ -33,4 +36,19 @@ $(document).ready(function(){
             }
         })
     });
+});
+
+
+$(document).ready(function(){
+   
+   $("#cmbIdentificacionLP").change(function(event){
+        let tipo =  $("#cmbIdentificacionLP").val() ;
+       console.log(tipo);
+       
+        if (tipo=='ICCID') {
+            $("#txtCantidadLP").removeAttr("disabled");
+            $("#txtICCIDLP").removeAttr("disabled");
+            $("#txtICCID2LP").removeAttr("disabled");
+        }
+   })
 });

@@ -49,6 +49,7 @@
                         </label>
                       </div> 
                       <input type="text" class="form-control" id="txtDescripcionLP">
+                      <label id="Buscar_producto"> Buscar</label>
             </form>  
         </div>
         <div class="card-title">LISTA DE RESULTADOS</div>
@@ -59,22 +60,23 @@
             </div>
             <div class="card-title">DETALLES DE LA COMPRA</div>
             <div class="card-body card-block">
-        
-            
+                
+                
                 <div class="col form-group">
                     <label for="text-input" class="form-control-label">Costo S/</label>
                     <input type="text" class="form-control" id="txtCostoLP" name='costo'>
                     <label for="text-input" class="form-control-label">Cantidad</label>
-                    <input type="text" class="form-control" id="txtCantidadLP" name='cantidad'>
+                    <input type="text" class="form-control" id="txtCantidadLP" name='cantidad' disabled>
                 </div>
            
                 <div class="col form-group">
+                    <input type="hidden" name="compra_id" value="{{session('compra_id')}}">
                     <label for="text-input" class="form-control-label">IMEI</label>
                     <input type="text" class="form-control" id="txtIMEILP" name='imei'>
                     <label for="text-input" class="form-control-label">ICCID</label>
-                    <input type="text" class="form-control" id="txtICCIDLP" name='iccid'>
+                    <input type="text" class="form-control" id="txtICCIDLP" name='iccid' disabled>
                     <label for="text-input" class="form-control-label">ICCID2</label>
-                    <input type="text" class="form-control" id="txtICCID2LP" name='iccid2'>
+                    <input type="text" class="form-control" id="txtICCID2LP" name='iccid2' disabled>
                 </div>
            
                 <div class="col form-group">

@@ -28,4 +28,6 @@ Route::get('/compra/detalle/producto/{id}', 'CompraController@eliminar_producto_
 Route::get('/registro_compras', function(){ return view('compra.registro_compras');});
 Route::get('/compra/guardar_suma_producto/{id}', 'CompraController@guardar_suma_productos');
 Route::get('/compra/listar_producto', 'ProductoController@index');
+Route::get('/compra/listar_producto/busqueda', 'ProductoController@productos_all');
+Route::get('/compra/guardar_lista_productos', 'ProductoController@guardar_lista_productos');
 

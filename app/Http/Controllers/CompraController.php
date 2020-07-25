@@ -32,9 +32,8 @@ class CompraController extends Controller
         $compras=Compra::where('id', $id)->get();
 
         $detalles_compras=Compra_detalle::select('compra_detalles.id','productos.cod_producto', 'compra_detalles.iccid', 'compra_detalles.imei','productos.descripcion','compra_detalles.costo','compra_detalles.igv', 'compra_detalles.costo_con_igv')
-                                    ->join('compras', 'compras.id', 'compra_detalles.id_compras')
                                     ->join('productos', 'productos.id','compra_detalles.id_productos' )
-                                    ->where('compras.id', $id)
+                                    ->where('compra_detalles.id_compras', $id)
                                     ->get();
 
         session(['compra_id' => $id]);

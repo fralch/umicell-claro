@@ -37,7 +37,7 @@
 					<span class="login100-form-title">
 						INICIAR SESIÓN
 					</span>
-
+				
 					<div class="wrap-input100 validate-input">
 						<input class="input100" type="text" name="usuario" placeholder="Usuario">
 						<span class="focus-input100"></span>
@@ -53,13 +53,9 @@
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-					
-					<div class="container-login100-form-btn" onclick="location.href='/view/punto_venta/index.html'">
-						<button class="login100-form-btn">
-							<a href="/compra" id="linkIngresar">Ingresar</a>
-						</button>
-					</div>
-
+				<form action="/usuario/validar" method="get">	
+					<input type="submit" value="envair">
+				</form>
 					<div class="text-center p-t-12">
 						<span class="txt1">
 							Olvidaste

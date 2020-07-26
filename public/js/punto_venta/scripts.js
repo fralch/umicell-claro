@@ -135,4 +135,18 @@ $(function() {
     });
   });
   
+  /*Navegar entre paginas*/
+
+  function navegar(subMenuId){
+
+    if (subMenuId == "submenu_registro_compras"){
+
+      document.getElementById("contenedor_registro_compras").style.display = 'contents';
+
+      if (screen.width < 900) 
+        document.getElementById("nav-accordion").style.display = 'none'
+      return;
+    }
+    
+}
 

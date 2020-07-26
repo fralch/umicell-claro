@@ -139,7 +139,7 @@ ul.top-menu > li > .logout {
 
 #sidebar h5 {
 	color: #f2f2f2;
-	font-weight: 700px;
+	font-weight: 700;
 }
 
 #sidebar ul li {
@@ -249,10 +249,10 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #535353;
+    background: #2f323a;
     color: #fff;
     display: block;
-
+    cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -311,7 +311,7 @@ ul.sidebar-menu li a.active i {
     padding-bottom: 15px;
     padding-top: 0px;
     width: 100%;
-    height: 850px;
+    height: 800px;
 }
 
 a.logo {
@@ -677,7 +677,9 @@ iframe { display:block; width:100%; border:none;}
   div.col.form-group{
       padding: 0;
       margin:0;
-    padding: 10px;}
+    padding: 10px;
+    width: 100%;
+text-align: center;}
 
 
   div.row.form-group{
@@ -710,12 +712,13 @@ iframe { display:block; width:100%; border:none;}
     }
 
   .form-control-label{
-  color:#404040;
-  font-weight: bolder;
-padding: 5px;}
+    color:#404040;
+    font-weight: bolder;
+    padding: 5px;}
 
 
   .form-control{
+    display:inline-flex;
   height: 30px;
   font-size: 12px;
   padding:5px;
@@ -723,47 +726,207 @@ padding: 5px;}
 
   label.form-control-label{
   margin: 0;
+  margin-left: 10px;
   }
 
   div.row.form-group{
       display: flex;
-      align-items: center; 
-      justify-content: center;
-      width: 100%;
   }
 
-  div.form-check{
+  .form-check{
       padding: 5px;
+      margin-left: 20px;
   }
 
+
+  
   #contenedor_tabla{
-      text-align: centes;
+    text-align: centes;
+}
+
+#tabla{
+  background-color: white;
   }
 
-  #tabla{
-    background-color: white;
+  th{
+      background-color: gray;
+      color:white;
+      text-align: center;
+  }
+
+  td{
+      text-align: center;
+  }
+
+
+/*COMPRA PRODUCTOS___________________________________________*/
+
+input#compra_desde{
+    width: 100%;
+    height: 30px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#dtpFechaDesdecp,#dtpFechaHastaCP{
+    width:100%;
+}
+
+#cmbTipoDocumentoCP{
+    width: 50%;
+}
+
+.panel{
+    border-color: #ef3829;
+    border-style: solid;
+    border-radius: .25rem;
+    border-width: 1px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.panel-heading{
+    color: #ef3829;
+}
+
+#txtSerieGCP,#txtNumeroGCP,#txtSerieFCP,#txtNumeroFCP{
+    width: 50%;
+}
+
+#btnAgregarCP,#btnQuitarCP,#btnGrabarCP{
+    background-color: #ef3829;
+    border-color: #ef3829;
+}
+
+@media screen and (max-width: 900px) {
+    #txtSerieGCP,#txtNumeroGCP,#txtSerieFCP,#txtNumeroFCP{
+        width: 100%;
     }
 
-    th{
-        background-color: gray;
-        color:white;
-        text-align: center;
+    #dtpFechaDesdeCP{
+        width: 50%;
     }
 
-    td{
-        text-align: center;
+}
+
+/*LISTA DE PRODUCTOS ___________________________*/
+
+#cmbIdentificacionLP{
+    width: 300px;
+    padding: 5px;
+}
+
+#txtDescripcionLP{
+    width: 300px;
+    margin-left: 10px;
+}
+
+#Buscar_producto{
+    margin-left: 10px;
+    font-size: 12px;
+    background-color: #ef3829;
+    color: white;
+    border-style: solid;
+    border-color: #ef3829;
+    border-radius: 5px;
+
+    width:80px;
+    text-align: center;
+
+  }
+
+  #Buscar_producto:hover{
+      cursor: pointer;
+      background-color: #535353;
+      color: white;
+      border-color: #535353;
+  }
+
+  #btnAgregarLP{
+    background-color: #ef3829;
+    border-color: #ef3829;
+}
+
+div#lblSubtitulo.card-title{
+    width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+
+    #txtCostoLP,#txtCantidadLP{
+        width: 30%;
     }
 
+}
+
+/*MODIFICAR COMPRA___________________________________________*/
+
+
+#txtTipoDocumentoMC{
+    width: 30%;
+}
+
+#txtGuiaSerieMC,#txtGuiaNumeroMC,#txtFacturaSerieMC,#txtFacturaNumeroMC{
+    width: 20%;
+}
+
+#txtSubtotalMC,#txtIgvMC,#txtTotalMC{
+    width: 100px;
+}
+
+#dtpFechaCompraMC{
+    width: 20%;
+}
+
+@media screen and (max-width: 900px) {
+
+    #txtTipoDocumentoMC{
+        width: 60%;
+    }
+    
+    #txtGuiaSerieMC,#txtGuiaNumeroMC,#txtFacturaSerieMC,#txtFacturaNumeroMC{
+        width: 50%;
+    }
+
+
+    label.form-control-label{
+        margin: 0;
+        margin-left: 0px;
+        }
+
+    #dtpFechaCompraMC{
+        width: 50%;
+    }
+
+    #txtSubtotalMC,#txtIgvMC,#txtTotalMC{
+        width: 60px;
+    }
+    
+}
+
+#btnAgregarMC,#btnQuitarMC,#btnGrabarMC{
+    background-color: #ef3829;
+    border-color: #ef3829;
+}
 
 
 
 /*REGISTRO COMPRAS___________________________________________*/
 
-.input-group {
-    width: auto;
-  }
 
-
+  #dtpDesdeRC,#dtpHastaRC{
+    width: 200px;
+}
 
 #gr_subtotal, #gr_igv,#gr_total{
     margin-left: 5%;
@@ -791,8 +954,8 @@ padding: 5px;}
 
   @media screen and (max-width: 900px) {
 
-    #dtpFechaDesde,#dtpFechaHasta{
-        width: 35%;
+    #dtpDesdeRC,#dtpHastaRC{
+        width: 130px;
     }
 
     #btnNuevo{
@@ -800,13 +963,51 @@ padding: 5px;}
     }
 }
 
-/*LISTA DE PRODUCTOS ___________________________*/
+/*AGREGAR COMPRA___________________________________________*/
 
-#cmbIdentificacion{
-    width: 300px;
-    padding: 5px;
+#cmbIdentificacionAC,#cmbProductosAC,#txtIccidAC,#txtImeiAC{
+    width: 30%;
 }
 
+#txtCostoSinIgvAC{
+    width: 100px;
+}
+
+#btnGrabarAC,#btnCancelarAC{
+    background-color: #ef3829;
+    border-color: #ef3829;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    #cmbIdentificacionAC,#cmbProductosAC,#txtIccidAC,#txtImeiAC{
+        width: 100%;
+}
+}
+
+/*EDITAR PRODUCTO___________________________________________*/
+
+#txtCodigoEP,#txtProductoEP{
+    width: 30%;
+}
+
+#txtCostoEP,#txtIgvEP,#txtCostoConIgvEP{
+    width: 100px;
+}
+
+#btnGuardarEP{
+    background-color: #ef3829;
+    border-color: #ef3829;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    #txtCodigoEP,#txtProductoEP{
+        width: 100%;
+    }
+}
 
 /*____________________________*/
 

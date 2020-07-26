@@ -14,13 +14,13 @@ $(document).ready(function(){
     
 
     
-    document.getElementById('compra_desde').value=ano+"-"+mesa+"-"+dia;
-    document.getElementById('compra_hasta').value=ano+"-"+mes+"-"+dia;
-    var desde = new Date($('#compra_desde').val());
+    document.getElementById('dtpDesdeRC').value=ano+"-"+mesa+"-"+dia;
+    document.getElementById('dtpHastaRC').value=ano+"-"+mes+"-"+dia;
+    var desde = new Date($('#dtpDesdeRC').val());
     desde = desde.toISOString();        
 
-    var hasta = $('#compra_hasta').val();
-    var hasta = new Date($('#compra_hasta').val());
+    var hasta = $('#dtpHastaRC').val();
+    var hasta = new Date($('#dtpHastaRC').val());
     hasta.setDate(hasta.getDate() + 1);
     hasta = hasta.toISOString();
 
@@ -52,9 +52,9 @@ $(document).ready(function(){
                 igv=parseFloat(igv)+parseFloat(val.igv);
                 total=parseFloat(total)+parseFloat(val.total); 
 
-                $("#subtotal_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(subtotal).toFixed(2)+'">');
-                $("#igv_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(igv).toFixed(2)+'">');
-                $("#total_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(total).toFixed(2)+'">');
+                $("#subtotal_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(subtotal).toFixed(2)+'" readonly>');
+                $("#igv_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(igv).toFixed(2)+'" readonly>');
+                $("#total_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(total).toFixed(2)+'" readonly>');
             });
             console.log(subtotal);
             console.log(igv);
@@ -71,16 +71,16 @@ $(document).ready(function(){
     })
 
     
-    $("#compra_desde").change(function(event){
+    $("#dtpDesdeRC").change(function(event){
         console.log("funciono");
         // var nom =$("#compra_desde").val() ;
             
        
-        var desde = new Date($('#compra_desde').val());
+        var desde = new Date($('#dtpDesdeRC').val());
         desde = desde.toISOString();        
 
-        var hasta = $('#compra_hasta').val();
-        var hasta = new Date($('#compra_hasta').val());
+        var hasta = $('#dtpHastaRC').val();
+        var hasta = new Date($('#dtpHastaRC').val());
         hasta.setDate(hasta.getDate() + 1);
         hasta = hasta.toISOString();
 
@@ -112,9 +112,9 @@ $(document).ready(function(){
                     igv=parseFloat(igv)+parseFloat(val.igv);
                     total=parseFloat(total)+parseFloat(val.total); 
 
-                    $("#subtotal_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(subtotal).toFixed(2)+'">');
-                    $("#igv_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(igv).toFixed(2)+'">');
-                    $("#total_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(total).toFixed(2)+'">');
+                    $("#subtotal_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(subtotal).toFixed(2)+'" readonly>');
+                    $("#igv_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(igv).toFixed(2)+'" readonly>');
+                    $("#total_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(total).toFixed(2)+'" readonly>');
                 });
                 console.log(subtotal);
                 console.log(igv);
@@ -134,16 +134,16 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     
-    $("#compra_hasta").change(function(event){
+    $("#dtpDesdeRC").change(function(event){
        // console.log("funciono");
         // var nom =$("#compra_desde").val() ;
         
        
-        var desde = new Date($('#compra_desde').val());
+        var desde = new Date($('#dtpHastaRC').val());
         desde = desde.toISOString();        
 
-        var hasta = $('#compra_hasta').val();
-        var hasta = new Date($('#compra_hasta').val());
+        var hasta = $('#dtpHastaRC').val();
+        var hasta = new Date($('#dtpHastaRC').val());
         hasta.setDate(hasta.getDate() + 1);
         hasta = hasta.toISOString();
 
@@ -175,9 +175,9 @@ $(document).ready(function(){
                     subtotal=parseFloat(subtotal)+parseFloat(val.subtotal);
                     igv=parseFloat(igv)+parseFloat(val.igv);
                     total=parseFloat(total)+parseFloat(val.total); 
-                    $("#subtotal_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(subtotal).toFixed(2)+'">');
-                    $("#igv_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(igv).toFixed(2)+'">');
-                    $("#total_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(total).toFixed(2)+'">');
+                    $("#subtotal_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(subtotal).toFixed(2)+'" readonly>');
+                    $("#igv_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(igv).toFixed(2)+'" readonly>');
+                    $("#total_").html('<input type="text" id="txtSubtotal" name="number-input" class="form-control" value="'+parseFloat(total).toFixed(2)+'" readonly>');
                     
                 });
                 console.log(subtotal);
@@ -193,3 +193,4 @@ $(document).ready(function(){
         })
     })
 });
+

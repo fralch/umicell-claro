@@ -1,6 +1,4 @@
-@php
-    $compra_id='';    
-@endphp
+
 
 <!doctype html>
 <html lang="en">
@@ -21,65 +19,69 @@
     <link href="{{asset('css/normalize.css')}}" rel="stylesheet">
     <link href="{{asset('css/punto_venta/style.css')}}" rel="stylesheet">
 
-    <title>Modificar compra</title>
+    <title>NUEVA compra</title>
   </head>
   <body>
 ​<div id='content_ListaPreguntas' class = "content" style='display:block'>
 
     <div class="card"></div>
         <div class="card-header">
-            <strong>MODIFICAR COMPRA</strong>
+            <strong>NUEVA COMPRA</strong>
         </div>
-        <div class="card-title">DETALLES DE COMPRA</div>
+        <div class="card-title">DETALLES  DE NUEVA COMPRA</div>
         <div class="card-body card-block">
 
-        @foreach ($compras as $item)
-            @php
-                $compra_id=$item->id;
-            @endphp
+        <label for="text-input" class="form-control-label">Tipo de Documento</label>
+        <form action="/compra/nueva/guardar" method="get">
             <div class="row form-group">
-            <label for="text-input" class="form-control-label">Tipo de Documento</label>
-            <input type="text" class="form-control" id="txtTipoDocumentoMC" value='{{$item->tipo_doc}}'>
-            </div>
-            <div class="row form-group">
+                <select name="tipo_doc" id="txtTipoDocumentoMC" class="form-control">
+               
+                    <option value='Factura'>Factura</option>
+                    <option value='Factura Virtual'>Factura Virtual</option>
+                    <option value='Boleta'>Boleta</option>
                 
+                </select>
+            </div>
+        
+            <div class="row form-group">
                 <label for="text-input" class="form-control-label">Fecha</label>
                <div class="input-group date" id="dtpFechaCompraMC" data-target-input="nearest">
-                    <input type="date" name="compra_desde" value='{{$item->f_compra}}'>
+                    <input type="date" name="f_compra" id='fecha_nuevo_producto'>
                 </div>
             </div>
             <div class="row form-group">
             <label for="text-input" class="form-control-label">Guia Serie</label>
-            <input type="text" class="form-control" id="txtGuiaSerieMC" value='{{$item->guia_serie}}'>
+            <input type="text" class="form-control" id="txtGuiaSerieMC" name="guia_serie">
 
             <label for="text-input" class="form-control-label">Guia Número</label>
-            <input type="text" class="form-control" id="txtGuiaNumeroMC" value='{{$item->guia_numero}}'>
+            <input type="text" class="form-control" id="txtGuiaNumeroMC" name="guia_numero">
             </div>
             <div class="row form-group">
                 <label for="text-input" class="form-control-label">Factura Serie</label>
-                <input type="text" class="form-control" id="txtFacturaSerieMC" value='{{$item->factura_serie}}'>
+                <input type="text" class="form-control" id="txtFacturaSerieMC" name="factura_serie">
     
                 <label for="text-input" class="form-control-label">Factura Número</label>
-                <input type="text" class="form-control" id="txtFacturaNumeroMC" value='{{$item->factura_numero}}'>
+                <input type="text" class="form-control" id="txtFacturaNumeroMC" name="factura_numero">
             </div>
         
             <div class="row form-group">
                 <label for="text-input" class="form-control-label">Sub. Total S/</label>
-                <input type="text" class="form-control" id="txtSubtotalMC" value='{{$item->subtotal}}'>
+                <input type="text" class="form-control" id="txtSubtotalMC" >
     
                 <label for="text-input" class="form-control-label">IGV S/</label>
-                <input type="text" class="form-control" id="txtIgvMC" value='{{$item->igv}}'>
+                <input type="text" class="form-control" id="txtIgvMC" >
     
                 <label for="text-input" class="form-control-label">TOTAL S/</label>
-                <input type="text" class="form-control" id="txtTotalMC" value='{{$item->total}}'>
+                <input type="text" class="form-control" id="txtTotalMC" >
             </div>
-            @endforeach   
+              
             
         </div>
         <div class="card-title">COMPRAS REALIZADAS</div>
         <div class="card-body card-block">
             <!-- AJAX -->
             <table>
+            @if(!empty($detalles_compra))
                 <tr>
                     <th>Codigo</th>
                     <th>ICCID</th>
@@ -90,26 +92,29 @@
                     <th>Consto+IGV</th>
                     <th>Acciones</th>
                 </tr>
-                @foreach($detalles_compras as  $value)
-                    <tr>
-                        <td> {{$value->cod_producto}}</td>
-                        <td> {{$value->iccid}}</td>
-                        <td> {{$value->imei}}</td>
-                        <td> {{$value->descripcion}}</td>
-                        <td> {{$value->costo}}</td>
-                        <td> {{$value->igv}}</td>
-                        <td> {{$value->costo_con_igv}}</td>
-                        <td> <a href="/compra/detalle/producto/{{$value->id}}">Borrar</a>/ <a href="/compra/detalles/editar_producto/{{$value->id}}">Editar</a></td>
-                    </tr>
+                
+                    @foreach($detalles_compras as  $value)
+                        <tr>
+                            <td> {{$value->cod_producto}}</td>
+                            <td> {{$value->iccid}}</td>
+                            <td> {{$value->imei}}</td>
+                            <td> {{$value->descripcion}}</td>
+                            <td> {{$value->costo}}</td>
+                            <td> {{$value->igv}}</td>
+                            <td> {{$value->costo_con_igv}}</td>
+                            <td> <a href="/compra/detalle/producto/{{$value->id}}">Borrar</a>/ <a href="/compra/detalles/editar_producto/{{$value->id}}">Editar</a></td>
+                        </tr>
 
-                @endforeach
+                    @endforeach
+                @endif
             </table>
             <!-- FIN AJAX -->
             <div class="col form-group">
-               
-                <!-- <button type="button" class="btn btn-primary" id="btnGrabarMC">Grabar</button> -->
-                <a href="/compra/guardar_suma_producto/{{$compra_id}}" class="btn btn-primary" id="btnGrabarMC">Grabar</a>
-                <a href="/compra/listar_producto" class="btn btn-primary" >Agregar</a>
+                <!-- <a href="/compra/listar_producto" class="btn btn-primary" >Agregar</a> -->
+                <input type="submit" class="btn btn-primary" value="Agregar">
+        </form>
+                <a href="/compra/guardar_suma_producto/" class="btn btn-primary" id="btnGrabarMC">Grabar</a>
+                
             </div>
 
         </div>   
@@ -118,14 +123,15 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery.min.js"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="{{asset('js/jquery.min.js')}}" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script> --}}
-    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="js/punto_venta/scripts.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script class="include" type="text/javascript" src="{{asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
+    <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
+    <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>
+    <script src=" {{asset('js/punto_venta/scripts.js')}}"></script>
+    <script src="{{asset('js/compra/nuevo.js')}}"></script>
 </body>
 </html>

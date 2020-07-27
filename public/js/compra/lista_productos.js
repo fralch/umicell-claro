@@ -49,6 +49,7 @@ $(document).ready(function(){
             $("#txtCantidadLP").removeAttr("disabled");
             $("#txtICCIDLP").removeAttr("disabled");
             $("#txtICCID2LP").removeAttr("disabled");
+            $("#txtIMEILP").prop('disabled', true);
         }
    })
 });

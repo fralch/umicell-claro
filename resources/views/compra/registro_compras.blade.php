@@ -76,8 +76,8 @@
           </form>
         </form>
         <div class="row form-group" id="filaBotones">
-          <button type="button" class="btn btn-primary" id="btnNuevo">Nuevo</button>
-          <button type="button" class="btn btn-primary" id="btnModificar">Modificar</button>
+          <!-- <button type="button" class="btn btn-primary" id="btnNuevo">Nuevo</button> -->
+          <a href="/compra/nueva" type="button" class="btn btn-primary">Nuevo</a>
         </div>
 
         </div>

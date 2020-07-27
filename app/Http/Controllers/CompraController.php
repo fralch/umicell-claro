@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Compra;
 use App\Compra_detalle;
+use App\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +22,7 @@ class CompraController extends Controller
         
         return Compra::select('id','f_compra', 'tipo_doc', 'factura_serie' ,'factura_numero', 'subtotal', 'igv', 'total')
                         ->whereBetween('f_compra', [$antes , $despues ])
-                        ->orderBy('f_compra', 'ASC')
+                        ->orderBy('id', 'DESC')
                         ->get();
     }
 
@@ -91,5 +92,27 @@ class CompraController extends Controller
         return redirect()->route('compra_detalle', ['id' => $id]);
     }
    
+    public function nueva_compra()
+    {
+        
+        return view('compra.nuevo');
+    }
+
+    public function guardar_nueva_compra(Request $request)
+    {
+        $insertar= Compra::insert( ['tipo_doc' => $request->tipo_doc, 'f_compra' => $request->f_compra, 'guia_serie'=>$request->guia_serie, 'guia_numero'=>$request->guia_numero, 'factura_serie'=>$request->factura_serie, 'factura_numero'=>$request->factura_numero]);
+
+        if ($insertar==1) {
+            $id_compra_last=Compra::orderby('id','DESC')->take(1)->get();
+            $id=$id_compra_last['0']->id;
+            session(['compra_id' => $id]);
+            // compra_nueva
+            return redirect()->route('lista_de_productos');
+
+        }
+
+        
+    
+    }
 
 }

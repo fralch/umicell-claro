@@ -29,22 +29,15 @@
         <div class="card-title">PARÁMETROS DE FECHA</div>
         <div class="card-body card-block"> 
             <form>
-                <div class="col form-group">
+                  <div class="row form-group">
                     <label for="text-input" class="form-control-label">Por fechas</label>
-                    <div class="row form-group">
-                       <label for="text-input" class="form-control-label">Desde</label>
-                       <div class="input-group date" id="dtpFechaDesde" data-target-input="nearest">
-                            <input type="date" name="compra_desde" id="compra_desde">
-                            
-                        </div>
-                        <label for="text-input" class="form-control-label">Hasta</label>
-                        <div class="input-group date" id="dtpFechaHasta" data-target-input="nearest">
-                            <input type="date" name="compra_hasta" id="compra_hasta">
-                           
-                            
-                        </div>
-                    </div>
-                </div>
+                  </div>
+                  <div class="row form-group">
+                    <label for="text-input" class="form-control-label">Desde</label>
+                        <input type="date" name="compra_desde" class="form-control" id="dtpDesdeRC">        
+                    <label for="text-input" class="form-control-label">Hasta</label>
+                        <input type="date" name="compra_hasta" class="form-control" id="dtpHastaRC">     
+                  </div>  
             </form>        
         </div>
         <div class="card-title">RESULTADOS</div> 

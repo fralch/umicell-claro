@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/registro_compras', function () {
+    return view('/compra/registro_compras');
+});
 
 
 Route::get('/compra', 'CompraController@index');

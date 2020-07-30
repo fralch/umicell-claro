@@ -15,7 +15,7 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/fonts.css')}}" rel="stylesheet">
     <link href="{{asset('css/normalize.css')}}" rel="stylesheet">
-    <link href="{{asset('css/punto_venta/styles_lista_producto.css')}}" rel="stylesheet">
+    <link href="{{asset('css/punto_venta/styles.css')}}" rel="stylesheet">
     
 
     <title>Lista de compras</title>
@@ -38,35 +38,34 @@
                     </select>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="rdbCodigoProductoLP" value="option1" checked>
-                        <label class="form-check-label" for="rdbCodigoProducto">
+                        <label class="form-check-label" for="rdbCodigoProductoLP">
                           Código Producto
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="rdbDescripcionLP" value="option2">
-                        <label class="form-check-label" for="rdbDescripcion">
+                        <input class="form-check-input"red type="radio" name="exampleRadios" id="rdbDescripcionLP" value="option2" style="color:red">
+                        <label class="form-check-label" for="rdbDescripcionLP">
                           Descripción
                         </label>
                       </div> 
                       <input type="text" class="form-control" id="txtDescripcionLP">
-                      <label id="Buscar_producto"> Buscar</label>
+                      <span id="Buscar_producto">Buscar</span>
             </form>  
         </div>
         <div class="card-title">LISTA DE RESULTADOS</div>
-        
-        <form class="form-inline" action="/compra/guardar_lista_productos" method='get'>
-            <div class="card-body card-block">
-                <div id='tabla'></div>
-            </div>
-            <div class="card-title">DETALLES DE LA COMPRA</div>
-            <div class="card-body card-block">
-                
-                
+        <div class="card-body card-block">
+            <form class="form-inline" action="/compra/guardar_lista_productos" method='get'>
+            
+                <div id='tabla'></div>            
+                <div class="card-title" id="lblSubtitulo">DETALLE DE LA COMPRA</div>
                 <div class="col form-group">
                     <label for="text-input" class="form-control-label">Costo S/</label>
-                    <input type="text" class="form-control" id="txtCostoLP" name='costo'>
-                    <!-- <label for="text-input" class="form-control-label">Cantidad</label>
-                    <input type="text" class="form-control" id="txtCantidadLP" name='cantidad' disabled> -->
+
+                    <input type="text" class="form-control" id="txtCostoLP" name='costo' readOnly>
+                    <label for="text-input" class="form-control-label">Cantidad</label>
+                    <input type="text" class="form-control" id="txtCantidadLP" name='cantidad' readOnly>
+
+                   
                 </div>
            
                 <div class="col form-group">
@@ -76,11 +75,11 @@
                     @endphp
 
                     <label for="text-input" class="form-control-label">IMEI</label>
-                    <input type="text" class="form-control" id="txtIMEILP" name='imei'>
+                    <input type="text" class="form-control" id="txtIMEILP" name='imei' readOnly>
                     <label for="text-input" class="form-control-label">ICCID</label>
-                    <input type="text" class="form-control" id="txtICCIDLP" name='iccid' disabled>
+                    <input type="text" class="form-control" id="txtICCIDLP" name='iccid' readOnly>
                     <label for="text-input" class="form-control-label">ICCID2</label>
-                    <input type="text" class="form-control" id="txtICCID2LP" name='iccid2' disabled>
+                    <input type="text" class="form-control" id="txtICCID2LP" name='iccid2' readOnly>
                 </div>
            
                 <div class="col form-group">
@@ -96,11 +95,10 @@
     <script src="{{asset('js/jquery.min.js')}}" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
     <script class="include" type="text/javascript" src="{{asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
     <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
     <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>
+    <script src=" {{asset('js/compra/registro_compras.js')}}"></script>
     <script src=" {{asset('js/compra/lista_productos.js')}}"></script>
 </body>
 </html>

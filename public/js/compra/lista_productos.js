@@ -39,17 +39,17 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function(){
-   
-   $("#cmbIdentificacionLP").change(function(event){
-        let tipo =  $("#cmbIdentificacionLP").val() ;
-       console.log(tipo);
-       
-        if (tipo=='ICCID') {
-            $("#txtCantidadLP").removeAttr("disabled");
-            $("#txtICCIDLP").removeAttr("disabled");
-            $("#txtICCID2LP").removeAttr("disabled");
-            $("#txtIMEILP").prop('disabled', true);
-        }
-   })
-});
+$("#cmbIdentificacionLP").change(function(event){
+let tipo =  $("#cmbIdentificacionLP").val() ;
+console.log(tipo);
+    
+    if (tipo=='ICCID') {
+        $("#txtICCIDLP").removeAttr("readonly");
+        $("#txtICCID2LP").removeAttr("readonly");
+        $("#txtIMEILP").prop('readonly', true);
+    }else{
+        $("#txtICCIDLP").prop("readonly", true);
+        $("#txtICCID2LP").prop("readonly", true);
+        $("#txtIMEILP").removeAttr('readonly');
+    }
+})

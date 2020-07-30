@@ -156,6 +156,19 @@ $(function() {
         document.getElementById("nav-accordion").style.display = 'none'
       return;
     }
+
+  /* _________________________________________EDITAR PRODUCTO _______________________________________________________*/
+
+  $("#txtCostoEP").keyup(function(event){
+
+      var costo = $("#txtCostoEP").val();
+      var igv = costo * (18/100);
+      
+      $("#txtIgvEP").val() = igv;
+      $("#txtCostoIgvEP").val() = costo + igv;
+
+  });
+
     
 }
 

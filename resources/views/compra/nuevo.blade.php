@@ -22,7 +22,7 @@
     <title>NUEVA compra</title>
   </head>
   <body>
-​<div id='content_ListaPreguntas' class = "content" style='display:block'>
+​    <div id='content' class = "content" style='display:block'>
 
     <div class="card"></div>
         <div class="card-header">
@@ -46,7 +46,7 @@
             <div class="row form-group">
                 <label for="text-input" class="form-control-label">Fecha</label>
                <div class="input-group date" id="dtpFechaCompraMC" data-target-input="nearest">
-                    <input type="date" name="f_compra" id='fecha_nuevo_producto'>
+                    <input class="form-control" type="date" name="f_compra" id='fecha_nuevo_producto'>
                 </div>
             </div>
             <div class="row form-group">
@@ -66,13 +66,13 @@
         
             <div class="row form-group">
                 <label for="text-input" class="form-control-label">Sub. Total S/</label>
-                <input type="text" class="form-control" id="txtSubtotalMC" >
+                <input type="text" class="form-control" id="txtSubtotalMC" readonly>
     
                 <label for="text-input" class="form-control-label">IGV S/</label>
-                <input type="text" class="form-control" id="txtIgvMC" >
+                <input type="text" class="form-control" id="txtIgvMC" readonly>
     
                 <label for="text-input" class="form-control-label">TOTAL S/</label>
-                <input type="text" class="form-control" id="txtTotalMC" >
+                <input type="text" class="form-control" id="txtTotalMC" readonly>
             </div>
               
             
@@ -111,7 +111,7 @@
             <!-- FIN AJAX -->
             <div class="col form-group">
                 <!-- <a href="/compra/listar_producto" class="btn btn-primary" >Agregar</a> -->
-                <input type="submit" class="btn btn-primary" value="Agregar">
+                <input type="submit" class="btn btn-primary" id="btnAgregarMC" value="Agregar">
         </form>
                 <a href="/compra/guardar_suma_producto/" class="btn btn-primary" id="btnGrabarMC">Grabar</a>
                 
@@ -126,8 +126,6 @@
     <script src="{{asset('js/jquery.min.js')}}" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
     <script class="include" type="text/javascript" src="{{asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
     <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
     <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>

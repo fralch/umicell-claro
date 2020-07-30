@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
     <title>Lista de compras</title>
   </head>
   <body>
-​<div id='content_ListaPreguntas' class = "content" style='display:block'>
+​<div id='content' class = "content" style='display:block'>
 
     <div class="card"></div>
         <div class="card-header">
@@ -60,26 +60,26 @@
                 <div class="card-title" id="lblSubtitulo">DETALLE DE LA COMPRA</div>
                 <div class="col form-group">
                     <label for="text-input" class="form-control-label">Costo S/</label>
-
-                    <input type="text" class="form-control" id="txtCostoLP" name='costo' readOnly>
-                    <label for="text-input" class="form-control-label">Cantidad</label>
-                    <input type="text" class="form-control" id="txtCantidadLP" name='cantidad' readOnly>
+                    <input type="text" class="form-control" id="txtCostoLP" name='costo'>
+                    <label hidden for="text-input" class="form-control-label">Cantidad</label>
+                    <input hidden type="text" class="form-control" id="txtCantidadLP" name='cantidad' readonly>
 
                    
                 </div>
            
                 <div class="col form-group">
                     <input type="hidden" name="compra_id" value="{{session('compra_id')}}">
+
                     @php
                     session()->forget('compra_id');
                     @endphp
 
                     <label for="text-input" class="form-control-label">IMEI</label>
-                    <input type="text" class="form-control" id="txtIMEILP" name='imei' readOnly>
+                    <input type="text" class="form-control" id="txtIMEILP" name='imei' maxlength="10" readonly>
                     <label for="text-input" class="form-control-label">ICCID</label>
-                    <input type="text" class="form-control" id="txtICCIDLP" name='iccid' readOnly>
+                    <input type="text" class="form-control" id="txtICCIDLP" name='iccid' readonly>
                     <label for="text-input" class="form-control-label">ICCID2</label>
-                    <input type="text" class="form-control" id="txtICCID2LP" name='iccid2' readOnly>
+                    <input type="text" class="form-control" id="txtICCID2LP" name='iccid2' readonly>
                 </div>
            
                 <div class="col form-group">

@@ -43,7 +43,7 @@
             </div>
             <div class="card-title">DATOS DE LA COMPRA</div>
             <div class="card-body card-block"> 
-                <form action="/compra/detalles/editar_producto_guardar" method="get">
+                <form action="/compra/detalles/editar_producto_guardar" method="get" name="frmEditarProducto">
                     @foreach ( $editar_producto as $valor )
                     <div class="row form-group">
                         <input type="hidden" name="id" value='{{$valor->id}}'>
@@ -60,6 +60,8 @@
                             <input type="text" class="form-control" id="txtCostoEP" name="costo" value='{{$valor->costo}}'>
                         <label for="text-input" class="form-control-label">IGV</label>
                             <input type="text" class="form-control" id="txtIgvEP" name='igv' value='{{$valor->igv}}' readonly>
+                    </div>
+                    <div class="row form-group">     
                         <label for="text-input" class="form-control-label">Costo + IGV</label>
                             <input type="text" class="form-control" id="txtCostoIgvEP" name="costo_con_igv" value='{{$valor->costo_con_igv}}' readonly>
                     </div>
@@ -79,7 +81,7 @@
     <script class="include" type="text/javascript" src="{{asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
     <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
     <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>
-    <script src=" {{asset('js/compra/registro_compras.js')}}"></script>
-    <script src=" {{asset('js/compra/lista_productos.js')}}"></script>
+    <script src=" {{asset('js/compra/scripts.js')}}"></script>
+    <script src=" {{asset('js/punto_venta/scripts.js')}}"></script>
 </body>
 </html>

@@ -137,7 +137,7 @@ $(function() {
 
   function ajustarIframe(){
 
-    var result = $("#sidebar").height();
+    var result = screen.height - ((16/100) * screen.height);
     console.log(result)
     document.getElementById('seccionContenido').style.height=result+'px';
 
@@ -147,9 +147,21 @@ $(function() {
 
   function navegar(subMenuId){
 
+    if (subMenuId == "menu_principal"){
+
+      ajustarIframe();
+      document.getElementById("contenedor_principal").style.display = 'contents';
+      document.getElementById("contenedor_registro_compras").style.display = 'none';
+
+      if (screen.width < 900) 
+        document.getElementById("nav-accordion").style.display = 'none'
+      return;
+    }
+
     if (subMenuId == "submenu_registro_compras"){
 
       ajustarIframe();
+      document.getElementById("contenedor_principal").style.display = 'none';
       document.getElementById("contenedor_registro_compras").style.display = 'contents';
 
       if (screen.width < 900) 
@@ -157,18 +169,22 @@ $(function() {
       return;
     }
 
+
+  }
   /* _________________________________________EDITAR PRODUCTO _______________________________________________________*/
-
-  $("#txtCostoEP").keyup(function(event){
-
-      var costo = $("#txtCostoEP").val();
-      var igv = costo * (18/100);
-      
-      $("#txtIgvEP").val() = igv;
-      $("#txtCostoIgvEP").val() = costo + igv;
-
-  });
-
     
-}
 
+
+
+$("#txtCostoEP").keyup(function(event){
+
+  var costo = $("#txtCostoEP").val();
+  var igv = costo * (18/100);
+  var costo_igv = parseFloat(costo) + parseFloat(igv);
+
+  console.log(igv); console.log(costo); console.log(costo_igv);
+
+  document.frmEditarProducto.igv.value=igv.toFixed(2);
+  document.frmEditarProducto.costo_con_igv.value=costo_igv.toFixed(2);
+
+});

@@ -52,12 +52,12 @@
         <div class="fa fa-bars tooltips" data-placement="right"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>UMI<span>CELL</span></b></a>
+      <a href="/compra" class="logo"><b>UMI<span>CELL</span></b></a>
       <!--logo end-->
 
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Salir</a></li>
+          <li><a class="logout" href="/">Salir</a></li>
         </ul>
       </div>
     </header>
@@ -73,14 +73,14 @@
           <p class="centered"><a href="profile.html"><img src="{{asset('images/punto_venta/userClaroWhite.svg')}}" class="img-circle" width="80"></a></p>
           <h5 class="centered">(USER)</h5>
           <li class="mt">
-            <a class="active" href="#">
+            <a class="active" href="#" onclick="navegar('menu_principal')">
               <i class="fa fa-dashboard"></i>
               <span>Principal</span>
               </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
-              <i class="fas fa-clipboard-list"></i>
+              <i class="fas fa-shopping-cart"></i>
               <span>Compras</span>
               </a>
             <ul class="sub">
@@ -97,6 +97,19 @@
         *********************************************************************************************************************************************************** -->
     <section id="main-content">
         <section class="wrapper" id="seccionContenido">
+
+              <div id='contenedor_principal' class = "content" style='display:contents'>
+
+                  <div class="card"></div>
+                    <div class="card-header">
+                        <strong>PRINCIPAL</strong>
+                    </div>
+                    <!-- <div class="card-title">DATOS DE LA COMPRA</div> -->
+                    <div class="card-body card-block"> 
+                      <h1>BIENVENIDO AL SISTEMA DE UMICELL</h1>
+                    </div>
+                    
+              </div>
 
                 <div class="container" style="display:none" id="contenedor_registro_compras">
                   <iframe src="/registro_compras" width="100%" height="100%" allowfullscreen></iframe>
@@ -122,6 +135,6 @@
     <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
     <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/punto_venta/scripts.js')}}"></script>
-    <script src="{{asset('js/compra.js')}}"></script>
+    <script src="{{asset('js/compra/scripts.js')}}"></script>
 </body>
 </html>

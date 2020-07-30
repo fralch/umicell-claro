@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
     // $("#txtDescripcionLP").keyup(function(event){
     $( "#Buscar_producto" ).click(function() {    
   
@@ -7,7 +5,7 @@ $(document).ready(function(){
        
         var x =$("#txtDescripcionLP").val() ;
         // console.log(x);
-        $("#tabla").html("<table class='table table-striped table-bordered table-responsive' id='t_producto' ><tr><th>Codigo Producto</th><th>Descripcion</th><th>Tipo</th></tr>");
+        $("#tabla").html("<table class='table table-striped table-bordered' id='t_producto' ><tr><th>Codigo Producto</th><th>Descripcion</th><th>Tipo</th></tr>");
         $.ajax({
             url : '/compra/listar_producto/busqueda',
             data : { nombre : x  },
@@ -16,7 +14,7 @@ $(document).ready(function(){
             success : function(response) {
                 // console.log(response);
                 let x=1;
-                $("#tabla").html("<table class='table table-striped table-bordered table-responsive' id='t_producto' ><tr><th>Id Producto</th><th>Descripcion</th><th>Tipo</th></tr>");
+                $("#tabla").html("<table class='table table-striped table-bordered' id='t_producto' ><tr><th>Id Producto</th><th>Descripcion</th><th>Tipo</th></tr>");
                 $.each(response, function(i, val) {
                     $("#t_producto tbody ").append("<tr>");
                     $("#t_producto tbody ").append("<td>"+'<input type="checkbox"  name="id_productos" value="'+val.id+'">'+val.cod_producto+"</td>");
@@ -27,6 +25,11 @@ $(document).ready(function(){
                 });
                console.log(response);
 
+               if (screen.width < 900) {
+                var elemento = document.getElementById("t_producto");
+                elemento.className += " table-responsive";
+               };
+
             },
             error : function(xhr, status) {
                // console.log('Disculpe, existió un problema key ');
@@ -36,7 +39,6 @@ $(document).ready(function(){
             }
         })
     });
-});
 
 
 $("#cmbIdentificacionLP").change(function(event){

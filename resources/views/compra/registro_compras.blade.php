@@ -26,7 +26,7 @@
         <div class="card-header">
             <strong>REGISTRO DE COMPRAS</strong>
         </div>
-        <div class="card-title">PARÁMETROS DE FECHA</div>
+        <div class="card-title">PARÁMETROS DE BÚSQUEDA</div>
         <div class="card-body card-block"> 
             <form>
                   <div class="row form-group">
@@ -34,7 +34,9 @@
                   </div>
                   <div class="row form-group">
                     <label for="text-input" class="form-control-label">Desde</label>
-                        <input type="date" name="compra_desde" class="form-control" id="dtpDesdeRC">        
+                        <input type="date" name="compra_desde" class="form-control" id="dtpDesdeRC">  
+                  </div> 
+                  <div class="row form-group">     
                     <label for="text-input" class="form-control-label">Hasta</label>
                         <input type="date" name="compra_hasta" class="form-control" id="dtpHastaRC">     
                   </div>  
@@ -88,7 +90,7 @@
     <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>
     <script src=" {{asset('js/punto_venta/scripts.js')}}"></script>
 
-    <script src="{{asset('js/compra.js')}}"></script>
+    <script src="{{asset('js/compra/scripts.js')}}"></script>
 </body>
 </body>
 </html>

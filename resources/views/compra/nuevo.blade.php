@@ -17,7 +17,7 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/fonts.css')}}" rel="stylesheet">
     <link href="{{asset('css/normalize.css')}}" rel="stylesheet">
-    <link href="{{asset('css/punto_venta/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/punto_venta/styles.css')}}" rel="stylesheet">
 
     <title>NUEVA compra</title>
   </head>
@@ -80,7 +80,7 @@
         <div class="card-title">COMPRAS REALIZADAS</div>
         <div class="card-body card-block">
             <!-- AJAX -->
-            <table>
+            <table class="table table-bordered table-hover" id="tblComprasNuevas">
             @if(!empty($detalles_compra))
                 <tr>
                     <th>Codigo</th>
@@ -119,6 +119,15 @@
 
         </div>   
     </div> 
+
+    <script>
+
+        if (screen.width < 900) {
+        var elemento = document.getElementById("tblComprasNuevas");
+        elemento.className += " table-responsive";
+        };
+
+    </script>
       
 
     <!-- Optional JavaScript -->

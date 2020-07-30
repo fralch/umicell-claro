@@ -134,6 +134,14 @@ $(function() {
       $('html, body').animate({scrollTop : 0},500);
     });
   });
+
+  function ajustarIframe(){
+
+    var result = $("#sidebar").height();
+    console.log(result)
+    document.getElementById('seccionContenido').style.height=result+'px';
+
+};
   
   /*Navegar entre paginas*/
 
@@ -141,6 +149,7 @@ $(function() {
 
     if (subMenuId == "submenu_registro_compras"){
 
+      ajustarIframe();
       document.getElementById("contenedor_registro_compras").style.display = 'contents';
 
       if (screen.width < 900) 

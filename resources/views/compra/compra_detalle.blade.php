@@ -42,7 +42,9 @@
                 <input type="text" class="form-control" id="txtTipoDocumentoMC" value='{{$item->tipo_doc}}' readOnly>
             </div>
             <div class="row form-group">
+
                 <label for="text-input" class="form-control-label col-md-1">Fecha</label>
+
                <div class="input-group date" id="dtpFechaCompraMC" data-target-input="nearest">
                     <input class="form-control" type="date" name="compra_desde" value='{{$item->f_compra}}' readOnly>
                 </div>
@@ -108,10 +110,10 @@
             </div>
             <!-- FIN AJAX -->
             <div class="col form-group">
-                {{-- <button type="button" class="btn btn-primary" id="btnAgregarMC">Agregar</button> --}}
+               
                 <!-- <button type="button" class="btn btn-primary" id="btnGrabarMC">Grabar</button> -->
-                <a href="/compra/listar_producto" class="btn btn-primary" id="btnAgregarMC">Agregar</a>
                 <a href="/compra/guardar_suma_producto/{{$compra_id}}" class="btn btn-primary" id="btnGrabarMC">Grabar</a>
+                <a href="/compra/listar_producto" class="btn btn-primary" >Agregar</a>
             </div>
 
         </div>   

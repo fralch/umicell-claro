@@ -60,13 +60,20 @@
                 <div class="card-title" id="lblSubtitulo">DETALLE DE LA COMPRA</div>
                 <div class="col form-group">
                     <label for="text-input" class="form-control-label">Costo S/</label>
+
                     <input type="text" class="form-control" id="txtCostoLP" name='costo' readOnly>
                     <label for="text-input" class="form-control-label">Cantidad</label>
                     <input type="text" class="form-control" id="txtCantidadLP" name='cantidad' readOnly>
+
+                   
                 </div>
            
                 <div class="col form-group">
                     <input type="hidden" name="compra_id" value="{{session('compra_id')}}">
+                    @php
+                    session()->forget('compra_id');
+                    @endphp
+
                     <label for="text-input" class="form-control-label">IMEI</label>
                     <input type="text" class="form-control" id="txtIMEILP" name='imei' readOnly>
                     <label for="text-input" class="form-control-label">ICCID</label>

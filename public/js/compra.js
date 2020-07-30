@@ -135,12 +135,12 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     
-    $("#dtpDesdeRC").change(function(event){
+    $("#dtpHastaRC").change(function(event){
        // console.log("funciono");
         // var nom =$("#compra_desde").val() ;
         
        
-        var desde = new Date($('#dtpHastaRC').val());
+        var desde = new Date($('#dtpDesdeRC').val());
         desde = desde.toISOString();        
 
         var hasta = $('#dtpHastaRC').val();

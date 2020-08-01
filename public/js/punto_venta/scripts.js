@@ -176,15 +176,18 @@ $(function() {
 
 
 
-$("#txtCostoEP").keyup(function(event){
+$("#txtCostoIgvEP").keyup(function(event){
 
-  var costo = $("#txtCostoEP").val();
+  var costoigv = $("#txtCostoIgvEP").val();
+  // var igv = costo * (18/100);
+  // var costo_igv = parseFloat(costo) + parseFloat(igv);
+  // console.log(igv); console.log(costo); console.log(costo_igv);
+  var costo = costoigv * (100/118);
   var igv = costo * (18/100);
-  var costo_igv = parseFloat(costo) + parseFloat(igv);
 
-  console.log(igv); console.log(costo); console.log(costo_igv);
+
 
   document.frmEditarProducto.igv.value=igv.toFixed(2);
-  document.frmEditarProducto.costo_con_igv.value=costo_igv.toFixed(2);
+  document.frmEditarProducto.costo.value=costo.toFixed(2);
 
 });

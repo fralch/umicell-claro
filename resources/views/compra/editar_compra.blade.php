@@ -21,19 +21,7 @@
     <title>Lista de compras</title>
   </head>
 <body>
-    <!-- Editar Producto
-    <form action="/compra/detalles/editar_producto_guardar" method="get">
-        @foreach ( $editar_producto as $valor )
-            <input type="hidden" name="id" value='{{$valor->id}}'>
-            Codigo <input type="text" value='{{$valor->cod_producto}}'><br>
-            <input type="hidden" name="compra_id" value='{{$valor->compra_id}}'>
-            Producto <input type="text" value='{{$valor->descripcion}}'><br>
-            Costo <input type="text" name="costo" id="" value='{{$valor->costo}}'><br>
-            IGV <input type="text" name='igv' value='{{$valor->igv}}'><br>
-            Costo + IGV <input type="text" name="costo_con_igv" id="" value='{{$valor->costo_con_igv}}'><br>
-            <input type="submit" value="Guardar">
-        @endforeach
-    </form> -->
+
 
     <div id='content' class = "content" style='display:block'>
 
@@ -57,13 +45,13 @@
                     </div>
                     <div class="row form-group"> 
                         <label for="text-input" class="form-control-label">Costo</label>
-                            <input type="text" class="form-control" id="txtCostoEP" name="costo" value='{{$valor->costo}}'>
+                            <input type="text" class="form-control" id="txtCostoEP" name="costo" value='{{$valor->costo}}' readonly>
                         <label for="text-input" class="form-control-label">IGV</label>
                             <input type="text" class="form-control" id="txtIgvEP" name='igv' value='{{$valor->igv}}' readonly>
                     </div>
                     <div class="row form-group">     
                         <label for="text-input" class="form-control-label">Costo + IGV</label>
-                            <input type="text" class="form-control" id="txtCostoIgvEP" name="costo_con_igv" value='{{$valor->costo_con_igv}}' readonly>
+                            <input type="text" class="form-control" id="txtCostoIgvEP" name="costo_con_igv" value='{{$valor->costo_con_igv}}' >
                     </div>
                         <div class="col form-group">
                             <button type="submit" class="btn btn-primary" id="btnGuardarEP">Guardar</button>

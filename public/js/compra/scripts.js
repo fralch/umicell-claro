@@ -13,7 +13,8 @@ $(document).ready(function(){
     if(mesa<10)
         mesa='0'+mesa;
     
-
+    if(dia==31)
+        dia='30';
     
     document.getElementById('dtpDesdeRC').value=ano+"-"+mesa+"-"+dia;
     document.getElementById('dtpHastaRC').value=ano+"-"+mes+"-"+dia;

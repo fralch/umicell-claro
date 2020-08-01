@@ -57,7 +57,7 @@
 
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="/">Salir</a></li>
+          <li><a class="logout" href="/cerrar_sesion">Salir</a></li>
         </ul>
       </div>
     </header>
@@ -71,7 +71,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="{{asset('images/punto_venta/userClaroWhite.svg')}}" class="img-circle" width="80"></a></p>
-          <h5 class="centered">(USER)</h5>
+          <h5 class="centered">{{session('usuario')}}</h5>
           <li class="mt">
             <a class="active" href="#" onclick="navegar('menu_principal')">
               <i class="fa fa-dashboard"></i>

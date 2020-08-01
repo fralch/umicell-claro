@@ -38,4 +38,5 @@ Route::get('/compra/listar_producto/busqueda', 'ProductoController@productos_all
 Route::get('/compra/guardar_lista_productos', 'ProductoController@guardar_lista_productos');
 
 Route::get('/validar_login', 'UsuarioController@validarUsuario');
+Route::get('/cerrar_sesion', 'UsuarioController@cerrar_sesion');
 

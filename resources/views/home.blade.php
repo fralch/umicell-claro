@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
     
     <!-- Custom styles for this template-->
     <link href="css/fonts.css" rel="stylesheet">
@@ -16,11 +16,15 @@
 
     <!-- Page icon -->
     <link rel="icon" href="images/icono.png" type="image/png" />
-
+	<script src="{{asset('js/sweetalert2.js')}}"></script>
     <title>Login</title>
   </head>
   <body>
-
+	@if(Session::has('usuario_no_valido'))
+		<script>
+			Swal.fire('{{session('usuario_no_valido')}}')
+		</script>
+    @endif
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -28,7 +32,7 @@
 					<img src="images/login/userClaroWhiteCircle.svg" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="/validar_login" method="get">
 
                     <div class="image" id="logoEmpresa">
                         <img src="images/login/logoUmicell.svg" alt="IMG">
@@ -54,10 +58,11 @@
 						</span>
 					</div>
 					
-					<div class="container-login100-form-btn" onclick="location.href='/view/punto_venta/index.html'">
-						<button class="login100-form-btn">
-							<a href="/compra" id="linkIngresar">Ingresar</a>
-						</button>
+					<div class="container-login100-form-btn" >
+						
+							<!-- <a href="/compra" id="linkIngresar">Ingresar</a> -->
+							<input type="submit" class="login100-form-btn"  value="Ingresar">
+						
 					</div>
 
 					<div class="text-center p-t-12">

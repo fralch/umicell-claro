@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Usuario;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Session;
 class UsuarioController extends Controller
 {
     public function validarUsuario(Request $request)
     {
-        return $request;
-        exit;
         // return $request;
+        // exit;
+        // // return $request;
         $usuario = $request->usuario;
         $clave = $request->password;
 
@@ -28,11 +28,18 @@ class UsuarioController extends Controller
                 session(['usuario_dni' => $dni]);
                 session(['usuario' => $nombres]);
                 
-                return redirect('/home');
+                return redirect('/compra');
         }elseif (count($validando_usuario)==0) {
                 Session::flash('usuario_no_valido','El usuario o contraseña no son correctas');
                 return redirect('/');
                 exit();
         }
+    }
+
+    public function cerrar_sesion()
+    {
+        session()->forget('usuario_dni');
+        session()->forget('usuario');
+        return redirect('/');
     }
 }

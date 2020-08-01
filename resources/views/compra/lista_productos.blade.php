@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
     <title>Lista de compras</title>
   </head>
   <body>
-​<div id='content_ListaPreguntas' class = "content" style='display:block'>
+​<div id='content' class = "content" style='display:block'>
 
     <div class="card"></div>
         <div class="card-header">
@@ -29,57 +29,52 @@
         </div>
         <div class="card-title">PARÁMETROS DE BÚSQUEDA</div>
         <div class="card-body card-block"> 
-            <form class="form-inline">
+                <form>
+                <div class="row form-group">
                     <label for="text-input" class="form-control-label">Identificación</label>
                     <select class="form-control" id="cmbIdentificacionLP" name='tipo'>
                         @foreach ($productos_tipos as $tipo)
                             <option value='{{$tipo->tipo}}'> {{$tipo->tipo}} </option>
                         @endforeach
                     </select>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="rdbCodigoProductoLP" value="option1" checked>
-                        <label class="form-check-label" for="rdbCodigoProductoLP">
-                          Código Producto
-                        </label>
+                </div>
+                <div class="row form-group">
+                    <label for="text-input" class="form-control-label">Descripción</label>
+                     <input type="text" class="form-control" id="txtDescripcionLP">
+                </div>
+                      <div class="row form-group">
+                        <p class="btn btm-primary" id="Buscar_producto">Buscar</p>
                       </div>
-                      <div class="form-check">
-                        <input class="form-check-input"red type="radio" name="exampleRadios" id="rdbDescripcionLP" value="option2" style="color:red">
-                        <label class="form-check-label" for="rdbDescripcionLP">
-                          Descripción
-                        </label>
-                      </div> 
-                      <input type="text" class="form-control" id="txtDescripcionLP">
-                      <span id="Buscar_producto">Buscar</span>
             </form>  
         </div>
         <div class="card-title">LISTA DE RESULTADOS</div>
         <div class="card-body card-block">
             <form class="form-inline" action="/compra/guardar_lista_productos" method='get'>
             
-                <div id='tabla'></div>            
+                <div class="form-group" id='tabla'></div>            
                 <div class="card-title" id="lblSubtitulo">DETALLE DE LA COMPRA</div>
-                <div class="col form-group">
+                <div class="row form-group">
                     <label for="text-input" class="form-control-label">Costo S/</label>
+                    <input type="text" class="form-control" id="txtCostoLP" name='costo'>
+                    <label hidden for="text-input" class="form-control-label">Cantidad</label>
+                    <input hidden type="text" class="form-control" id="txtCantidadLP" name='cantidad' readonly>
 
-                    <input type="text" class="form-control" id="txtCostoLP" name='costo' readOnly>
-                    <label for="text-input" class="form-control-label">Cantidad</label>
-                    <input type="text" class="form-control" id="txtCantidadLP" name='cantidad' readOnly>
-
-                   
                 </div>
            
-                <div class="col form-group">
+                <div class="row form-group">
                     <input type="hidden" name="compra_id" value="{{session('compra_id')}}">
+
                     @php
                     session()->forget('compra_id');
                     @endphp
 
                     <label for="text-input" class="form-control-label">IMEI</label>
-                    <input type="text" class="form-control" id="txtIMEILP" name='imei' readOnly>
+                    <input type="text" class="form-control" id="txtIMEILP" name='imei' maxlength="10" readonly>
                     <label for="text-input" class="form-control-label">ICCID</label>
-                    <input type="text" class="form-control" id="txtICCIDLP" name='iccid' readOnly>
+                    <input type="text" class="form-control" id="txtICCIDLP" name='iccid' readonly>
                     <label for="text-input" class="form-control-label">ICCID2</label>
-                    <input type="text" class="form-control" id="txtICCID2LP" name='iccid2' readOnly>
+                    <input type="text" class="form-control" id="txtICCID2LP" name='iccid2' readonly>
+
                 </div>
            
                 <div class="col form-group">
@@ -98,7 +93,6 @@
     <script class="include" type="text/javascript" src="{{asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
     <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
     <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>
-    <script src=" {{asset('js/compra/registro_compras.js')}}"></script>
-    <script src=" {{asset('js/compra/lista_productos.js')}}"></script>
+    <script src=" {{asset('js/compra/scripts.js')}}"></script>
 </body>
 </html>

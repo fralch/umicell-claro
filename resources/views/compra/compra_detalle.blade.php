@@ -64,13 +64,14 @@
                 <input type="text" class="form-control" id="txtFacturaNumeroMC" value='{{$item->factura_numero}}'readOnly>
             </div>
         
-            <div class="form-inline">
+            <div class="row form-group">
                 <label for="text-input" class="form-control-label">Sub. Total S/</label>
                 <input type="text" class="form-control" id="txtSubtotalMC" value='{{$item->subtotal}}'readOnly>
     
                 <label for="text-input" class="form-control-label">IGV S/</label>
                 <input type="text" class="form-control" id="txtIgvMC" value='{{$item->igv}}'readOnly>
-    
+            </div>
+            <div class="row form-group">
                 <label for="text-input" class="form-control-label">TOTAL S/</label>
                 <input type="text" class="form-control" id="txtTotalMC" value='{{$item->total}}'readOnly>
             </div>
@@ -82,7 +83,7 @@
         <div class="card-body card-block">
             <!-- AJAX -->
             <div class="form-group" id="tabla">
-                <table class='table table-striped table-bordered table-responsive' id='tbl_Compras'>
+                <table class='table table-striped table-bordered' id='tbl_Compras'>
                     <tr>
                         <th>Codigo</th>
                         <th>ICCID</th>
@@ -113,11 +114,20 @@
                
                 <!-- <button type="button" class="btn btn-primary" id="btnGrabarMC">Grabar</button> -->
                 <a href="/compra/guardar_suma_producto/{{$compra_id}}" class="btn btn-primary" id="btnGrabarMC">Grabar</a>
-                <a href="/compra/listar_producto" class="btn btn-primary" >Agregar</a>
+                <a href="/compra/listar_producto" class="btn btn-primary" id="btnAgregarMC">Agregar</a>
             </div>
 
         </div>   
     </div> 
+
+    <script>
+
+            if (screen.width < 900) {
+            var elemento = document.getElementById("tbl_Compras");
+            elemento.className += " table-responsive";
+            };
+
+    </script>
       
 
     <!-- Optional JavaScript -->

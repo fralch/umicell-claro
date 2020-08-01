@@ -1010,6 +1010,39 @@ div#lblSubtitulo.card-title{
     }
 }
 
+/*EDITAR COMPRA___________________________________________*/
+
+
+#txtProductoEP{
+    width: 30%;
+}
+
+#txtCodigoEP{
+    width: 20%;
+}
+
+#txtCostoEP,#txtIgvEP,#txtCostoIgvEP{
+    width: 100px;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    #txtProductoEP{
+        width: 50%;
+    }
+    
+    #txtCodigoEP{
+        width: 50%;
+    }
+    
+    #txtCostoEP,#txtIgvEP,#txtCostoIgvEP{
+        width: 100px;
+    }
+    
+}
+
 /*____________________________*/
 
 

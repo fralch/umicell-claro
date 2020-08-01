@@ -113,7 +113,7 @@ $(document).ready(function(){
                     $("#tabla_compras tbody ").append("<td>"+val.subtotal+"</td>");
                     $("#tabla_compras tbody ").append("<td>"+val.igv+"</td>");
                     $("#tabla_compras tbody ").append("<td>"+val.total+"</td>");
-                    $("#tabla_compras tbody ").append("<td><a href='/api/tardanzas/delete/"+val.id+"'>"+"Editar"+"</a></td>");
+                    $("#tabla_compras tbody ").append("<td><a href='/compra/detalle/"+val.id+"'>"+"Editar"+"</a></td>");
                     $("#tabla_compras tbody ").append("</tr></table>");
                     
                     if (screen.width < 900) {
@@ -184,7 +184,7 @@ $(document).ready(function(){
                     $("#tabla_compras tbody ").append("<td>"+val.subtotal+"</td>");
                     $("#tabla_compras tbody ").append("<td>"+val.igv+"</td>");
                     $("#tabla_compras tbody ").append("<td>"+val.total+"</td>");
-                    $("#tabla_compras tbody ").append("<td><a href='/api/tardanzas/delete/"+val.id+"'>"+"Editar"+"</a></td>");
+                    $("#tabla_compras tbody ").append("<td><a href='/compra/detalle/"+val.id+"'>"+"Editar"+"</a></td>");
                     $("#tabla_compras tbody ").append("</tr></table>");
 
                     if (screen.width < 900) {

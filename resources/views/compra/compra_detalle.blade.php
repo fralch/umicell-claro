@@ -51,29 +51,29 @@
             </div>
             <div class="row form-group">
             <label for="text-input" class="form-control-label col-md-1">Guia Serie</label>
-            <input type="text" class="form-control" id="txtGuiaSerieMC" value='{{$item->guia_serie}}' readOnly>
+            <input type="number" class="form-control" id="txtGuiaSerieMC" value='{{$item->guia_serie}}' readOnly>
 
             <label for="text-input" class="form-control-label col-md-1">Guia Número</label>
-            <input type="text" class="form-control" id="txtGuiaNumeroMC" value='{{$item->guia_numero}}' readOnly>
+            <input  type="number" class="form-control" id="txtGuiaNumeroMC" value='{{$item->guia_numero}}' readOnly>
             </div>
             <div class="row form-group">
                 <label for="text-input" class="form-control-label col-md-1">Factura Serie</label>
-                <input type="text" class="form-control" id="txtFacturaSerieMC" value='{{$item->factura_serie}}'readOnly>
+                <input type="number" class="form-control" id="txtFacturaSerieMC" value='{{$item->factura_serie}}'readOnly>
     
                 <label for="text-input" class="form-control-label col-md-1">Factura Número</label>
-                <input type="text" class="form-control" id="txtFacturaNumeroMC" value='{{$item->factura_numero}}'readOnly>
+                <input type="number" class="form-control" id="txtFacturaNumeroMC" value='{{$item->factura_numero}}'readOnly>
             </div>
         
             <div class="row form-group">
                 <label for="text-input" class="form-control-label">Sub. Total S/</label>
-                <input type="text" class="form-control" id="txtSubtotalMC" value='{{$item->subtotal}}'readOnly>
+                <input type="number" class="form-control" id="txtSubtotalMC" value='{{$item->subtotal}}'readOnly>
     
                 <label for="text-input" class="form-control-label">IGV S/</label>
-                <input type="text" class="form-control" id="txtIgvMC" value='{{$item->igv}}'readOnly>
+                <input type="number" class="form-control" id="txtIgvMC" value='{{$item->igv}}'readOnly>
             </div>
             <div class="row form-group">
                 <label for="text-input" class="form-control-label">TOTAL S/</label>
-                <input type="text" class="form-control" id="txtTotalMC" value='{{$item->total}}'readOnly>
+                <input type="number" class="form-control" id="txtTotalMC" value='{{$item->total}}'readOnly>
             </div>
             <br>
             @endforeach   

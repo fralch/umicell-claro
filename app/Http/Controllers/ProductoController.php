@@ -6,6 +6,7 @@ use App\Producto;
 use App\Compra_detalle;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductoController extends Controller
 {
@@ -37,6 +38,9 @@ class ProductoController extends Controller
 
         session()->forget('compra_id');
         Compra_detalle::insert(['id_compras'=>$compra_id,'id_productos'=> $id_productos ,'imei'=>$imei, 'costo'=>$costo, 'igv'=> $igv, 'costo_con_igv'=>$costo_con_igv]);
+
+        // DB::insert('insert into compra_detalles (id_compras, id_productos, imei, costo, igv, costo_con_igv) 
+        //             values ('.$compra_id.', '.$id_productos.', '.$imei.', '.$costo.', '.$igv.', '.$costo_con_igv.')', [1]);
         return redirect()->route('compra_detalle', ['id' => $compra_id]);
        }
        if (!empty($request->iccid)) {

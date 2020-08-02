@@ -51,28 +51,28 @@
             </div>
             <div class="row form-group">
             <label for="text-input" class="form-control-label">Guia Serie</label>
-            <input type="text" class="form-control" id="txtGuiaSerieMC" name="guia_serie">
+            <input type="number" class="form-control" id="txtGuiaSerieMC" name="guia_serie">
 
             <label for="text-input" class="form-control-label">Guia Número</label>
-            <input type="text" class="form-control" id="txtGuiaNumeroMC" name="guia_numero">
+            <input type="number" class="form-control" id="txtGuiaNumeroMC" name="guia_numero">
             </div>
             <div class="row form-group">
                 <label for="text-input" class="form-control-label">Factura Serie</label>
-                <input type="text" class="form-control" id="txtFacturaSerieMC" name="factura_serie">
+                <input type="number" class="form-control" id="txtFacturaSerieMC" name="factura_serie">
     
                 <label for="text-input" class="form-control-label">Factura Número</label>
-                <input type="text" class="form-control" id="txtFacturaNumeroMC" name="factura_numero">
+                <input type="number" class="form-control" id="txtFacturaNumeroMC" name="factura_numero">
             </div>
         
             <div class="row form-group">
                 <label for="text-input" class="form-control-label">Sub. Total S/</label>
-                <input type="text" class="form-control" id="txtSubtotalMC" readonly>
+                <input type="number" class="form-control" id="txtSubtotalMC" readonly>
     
                 <label for="text-input" class="form-control-label">IGV S/</label>
-                <input type="text" class="form-control" id="txtIgvMC" readonly>
+                <input type="number" class="form-control" id="txtIgvMC" readonly>
     
                 <label for="text-input" class="form-control-label">TOTAL S/</label>
-                <input type="text" class="form-control" id="txtTotalMC" readonly>
+                <input type="number"" class="form-control" id="txtTotalMC" readonly>
             </div>
               
             

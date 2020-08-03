@@ -55,7 +55,7 @@
                 <div class="card-title" id="lblSubtitulo">DETALLE DE LA COMPRA</div>
                 <div class="row form-group">
                     <label for="text-input" class="form-control-label">Costo S/</label>
-                    <input type="number" class="form-control" id="txtCostoLP" name='costo'>
+                    <input type="number" min="1" class="form-control" id="txtCostoLP" name='costo'>
                     <label hidden for="text-input" class="form-control-label">Cantidad</label>
                     <input hidden type="number" class="form-control" id="txtCantidadLP" name='cantidad' readonly>
 
@@ -69,11 +69,11 @@
                     @endphp
 
                     <label for="text-input" class="form-control-label">IMEI</label>
-                    <input type="number" class="form-control" id="txtIMEILP" name='imei' maxlength="10" readonly>
+                    <input type="number" min="1" class="form-control" id="txtIMEILP" name='imei' maxlength="10" readonly>
                     <label for="text-input" class="form-control-label">ICCID</label>
-                    <input type="number" class="form-control" id="txtICCIDLP" name='iccid' readonly>
+                    <input type="number" min="1" class="form-control" id="txtICCIDLP" name='iccid' readonly>
                     <label for="text-input" class="form-control-label">ICCID2</label>
-                    <input type="number" class="form-control" id="txtICCID2LP" name='iccid2' readonly>
+                    <input type="number" min="1" class="form-control" id="txtICCID2LP" name='iccid2' readonly>
 
                 </div>
            

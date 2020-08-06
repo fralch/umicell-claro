@@ -51,7 +51,7 @@
                     </div>
                     <div class="row form-group">     
                         <label for="text-input" class="form-control-label">Costo + IGV</label>
-                            <input type="number" class="form-control" id="txtCostoIgvEP" name="costo_con_igv" value='{{$valor->costo_con_igv}}' >
+                            <input  class="form-control" id="txtCostoIgvEP" name="costo_con_igv" value='{{$valor->costo_con_igv}}' >
                     </div>
                         <div class="col form-group">
                             <button type="submit" class="btn btn-primary" id="btnGuardarEP">Guardar</button>

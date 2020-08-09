@@ -60,5 +60,17 @@ class ProductoController extends Controller
        }
         
     }
-   
+    public function productos_todo()
+    { 
+        return Producto::take(20)->orderBy('id', 'DESC')->get();   
+    }
+
+    public function guardar_producto(Request $request)
+    { 
+        // return $request; 
+        Producto::insert(['cod_producto'=>$request->cod_producto, 'descripcion'=>$request->descripcion, 'tipo'=>$request->tipo, 'fecha'=>$request->fecha]);
+        return redirect('/productos');
+    }
+
+    
 }

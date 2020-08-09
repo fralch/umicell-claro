@@ -23,6 +23,7 @@ Route::get('/registro_compras', function () {
 });
 
 
+//compras que la tienda hace
 Route::get('/compra', 'CompraController@index');
 Route::get('/compra/nueva', 'CompraController@nueva_compra')->name('compra_nueva');
 Route::get('/compra/nueva/guardar/', 'CompraController@guardar_nueva_compra');
@@ -36,6 +37,16 @@ Route::get('/compra/guardar_suma_producto/{id}', 'CompraController@guardar_suma_
 Route::get('/compra/listar_producto', 'ProductoController@index')->name('lista_de_productos');
 Route::get('/compra/listar_producto/busqueda', 'ProductoController@productos_all');
 Route::get('/compra/guardar_lista_productos', 'ProductoController@guardar_lista_productos');
+
+//productos que la tienda compra
+Route::get('/productos', function () {
+    return view('productos.productos');
+});
+Route::get('productos/todo', 'ProductoController@productos_todo');
+Route::get('/productos/nuevo', function () {
+    return view('productos.nuevo_producto');
+});
+Route::get('productos/nuevo/guardar', 'ProductoController@guardar_producto');
 
 Route::get('/validar_login', 'UsuarioController@validarUsuario');
 Route::get('/cerrar_sesion', 'UsuarioController@cerrar_sesion');

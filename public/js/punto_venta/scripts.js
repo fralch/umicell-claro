@@ -152,6 +152,7 @@ $(function() {
       ajustarIframe();
       document.getElementById("contenedor_principal").style.display = 'contents';
       document.getElementById("contenedor_registro_compras").style.display = 'none';
+      document.getElementById("contenedor_prductos").style.display = 'none';
 
       if (screen.width < 900) 
         document.getElementById("nav-accordion").style.display = 'none'
@@ -162,7 +163,20 @@ $(function() {
 
       ajustarIframe();
       document.getElementById("contenedor_principal").style.display = 'none';
+      document.getElementById("contenedor_prductos").style.display = 'none';
       document.getElementById("contenedor_registro_compras").style.display = 'contents';
+
+      if (screen.width < 900) 
+        document.getElementById("nav-accordion").style.display = 'none'
+      return;
+    }
+
+    if (subMenuId == "submenu_producto"){
+
+      ajustarIframe();
+      document.getElementById("contenedor_principal").style.display = 'none';
+      document.getElementById("contenedor_registro_compras").style.display = 'none';
+      document.getElementById("contenedor_prductos").style.display = 'contents';
 
       if (screen.width < 900) 
         document.getElementById("nav-accordion").style.display = 'none'

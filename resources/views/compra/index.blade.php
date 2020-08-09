@@ -85,6 +85,7 @@
               </a>
             <ul class="sub">
               <li><a href="#" onclick="navegar('submenu_registro_compras')">Registro de compras</a></li>
+              <li><a href="#" onclick="navegar('submenu_producto')">Productos</a></li>
             </ul>
           </li>
         </ul>
@@ -111,8 +112,12 @@
                     
               </div>
 
-                <div class="container" style="display:none" id="contenedor_registro_compras">
+                <div id="contenedor_registro_compras" class="container" style="display:none" >
                   <iframe src="/registro_compras" width="100%" height="100%" allowfullscreen></iframe>
+                </div>
+
+                <div id="contenedor_prductos" class="container" style="display:none" >
+                  <iframe src="/productos" width="100%" height="100%" allowfullscreen></iframe>
                 </div>
 
         </section>
